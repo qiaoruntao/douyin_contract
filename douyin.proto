@@ -4635,11 +4635,14 @@ message ImCommon {
   optional bool isDispatch = 20;
   optional int64 channelId = 21;
   optional int64 diffSei2absSecond = 22;
+  optional int64 appId = 24;
 }
 message ImPublicAreaCommon {
   optional DataImage userLabel = 1;
   optional int64 userConsumeInRoom = 2;
   optional int64 userSendGiftCntInRoom = 3;
+  optional int64 individualPriority = 4;
+  optional int64 imAction = 8;
 }
 message ImLandscapeAreaCommon {
   optional bool showHead = 1;
@@ -5995,6 +5998,9 @@ message DataUserFollowInfo {
   optional int64 followStatus = 3;
   optional int64 pushStatus = 4;
   optional string remarkName = 5;
+  optional string followerCountStr = 6;
+  optional string followingCountStr = 7;
+  optional bool invalidFollowStatus = 8;
 }
 message DataUserPayGrade {
   optional int64 totalDiamondCount = 1;
@@ -6285,6 +6291,7 @@ message ImLikeMessage {
   optional int64 linkmicGuestUid = 9;
   optional string scene = 10;
   optional ImPicoDisplayInfo picoDisplayInfo = 11;
+  optional ImPublicAreaCommon publicAreaCommon = 12;
 }
 message ImUserContribute {
   optional int64 userId = 1;
